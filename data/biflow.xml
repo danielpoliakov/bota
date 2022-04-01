@@ -1,0 +1,112 @@
+<aggregator>
+  <id name="main">
+    <field>
+      <type>KEY</type>
+      <name>SRC_IP</name>
+      <reverse_name>DST_IP</reverse_name>
+    </field>
+
+    <field>
+      <type>KEY</type>
+      <name>DST_IP</name>
+      <reverse_name>SRC_IP</reverse_name>
+    </field>
+
+    <field>
+      <type>KEY</type>
+      <name>SRC_PORT</name>
+      <reverse_name>DST_PORT</reverse_name>
+    </field>
+
+    <field>
+      <type>KEY</type>
+      <name>DST_PORT</name>
+      <reverse_name>SRC_PORT</reverse_name>
+    </field>
+
+    <field>
+      <type>KEY</type>
+      <name>PROTOCOL</name>
+    </field>
+
+    <field>
+      <type>FIRST</type>
+      <name>SRC_MAC</name>
+      <reverse_name>DST_MAC</reverse_name>
+    </field>
+
+    <field>
+      <type>FIRST</type>
+      <name>DST_MAC</name>
+      <reverse_name>SRC_MAC</reverse_name>
+    </field>
+
+    <field>
+      <type>SUM</type>
+      <name>PACKETS</name>
+      <reverse_name>PACKETS_REV</reverse_name>
+    </field>
+
+    <field>
+      <type>SUM</type>
+      <name>PACKETS_REV</name>
+      <reverse_name>PACKETS</reverse_name>
+    </field>
+
+    <field>
+      <type>SUM</type>
+      <name>BYTES</name>
+      <reverse_name>BYTES_REV</reverse_name>
+    </field>
+
+    <field>
+      <type>SUM</type>
+      <name>BYTES_REV</name>
+      <reverse_name>BYTES</reverse_name>
+    </field>
+
+    <field>
+      <type>BITOR</type>
+      <name>TCP_FLAGS</name>
+      <reverse_name>TCP_FLAGS_REV</reverse_name>
+    </field>
+
+    <field>
+      <type>BITOR</type>
+      <name>TCP_FLAGS_REV</name>
+      <reverse_name>TCP_FLAGS</reverse_name>
+    </field>
+
+    <field>
+      <type>SORTED_MERGE</type>
+      <name>PPI_PKT_TIMES</name>
+      <sort_key>PPI_PKT_TIMES</sort_key>
+      <sort_type>ASCENDING</sort_type>
+      <size>30</size>
+    </field>
+
+    <field>
+      <type>SORTED_MERGE</type>
+      <name>PPI_PKT_LENGTHS</name>
+      <sort_key>PPI_PKT_TIMES</sort_key>
+      <sort_type>ASCENDING</sort_type>
+      <size>30</size>
+    </field>
+
+    <field>
+      <type>SORTED_MERGE</type>
+      <name>PPI_PKT_FLAGS</name>
+      <sort_key>PPI_PKT_TIMES</sort_key>
+      <sort_type>ASCENDING</sort_type>
+      <size>30</size>
+    </field>
+
+    <field>
+      <type>SORTED_MERGE_DIR</type>
+      <name>PPI_PKT_DIRECTIONS</name>
+      <sort_key>PPI_PKT_TIMES</sort_key>
+      <sort_type>ASCENDING</sort_type>
+      <size>30</size>
+    </field>
+  </id>
+</aggregator>

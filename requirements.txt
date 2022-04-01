@@ -1,0 +1,9 @@
+nemea-pytrap
+nemea-fet
+imblearn
+scikit-learn==0.24.1
+pyahocorasick
+pandas
+requests
+pytest
+coverage

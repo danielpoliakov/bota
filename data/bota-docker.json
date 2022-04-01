@@ -1,0 +1,42 @@
+{
+  "filter": {
+    "type": "ip_range",
+    "value": "0.0.0.0/0"
+  },
+  "interfaces": [
+    {
+      "interface": "u:collector_basic",
+      "type": "basic"
+    },
+    {
+      "interface": "u:collector_idpcontent",
+      "type": "idpcontent"
+    },
+    {
+      "interface": "u:collector_pstats",
+      "type": "pstats"
+    }
+  ],
+  "model": {
+    "cnc": "/data/ab.pickle",
+    "tor": "/data/tor.list",
+    "anomaly": {
+      "dst_ip": 50,
+      "dst_port": 50,
+      "packets": 1000,
+      "bytes": 1000000
+    }
+  },
+  "output": {
+    "idea": "/data/idea.json",
+    "detail": "/data/detail.json"
+  },
+  "nemea": {
+    "ipfixprobe": "/usr/local/bin/ipfixprobe",
+    "biflow_aggregator": "/usr/local/bin/biflow_aggregator",
+    "biflow_config": "/data/biflow.xml",
+    "biflow_id": "main",
+    "biflow_active": 300,
+    "biflow_passive": 240
+  }
+}
